@@ -3,154 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة التحكم | اطمن</title>
+    <title>Dashboard - لوحة التحكم</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { background-color: #f1f5f9; display: flex; min-height: 100vh; margin: 0; }
-        
-        /* Sidebar */
-        .sidebar { width: 260px; background-color: var(--primary-navy); color: #fff; display: flex; flex-direction: column; position: fixed; right: 0; height: 100vh; transition: 0.3s; }
-        .sidebar-logo { padding: 30px 20px; font-size: 24px; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px; text-align: center; }
-        .sidebar-logo i { color: var(--bright-blue); margin-left: 10px; }
-        .nav-menu { list-style: none; padding: 0; margin: 0; flex-grow: 1; }
-        .nav-item { margin-bottom: 5px; }
-        .nav-link { display: flex; align-items: center; padding: 15px 25px; color: #94a3b8; text-decoration: none; transition: 0.3s; }
-        .nav-link:hover, .nav-link.active { background-color: rgba(255,255,255,0.05); color: #fff; border-right: 4px solid var(--bright-blue); }
-        .nav-link i { width: 25px; font-size: 18px; margin-left: 10px; }
-        
-        /* Main Content */
-        .main-content { margin-right: 260px; flex-grow: 1; padding: 40px; transition: 0.3s; }
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
-        .header h1 { font-size: 24px; color: var(--primary-navy); }
-        .add-btn { background: var(--bright-blue); color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; }
-        
-        /* Stats */
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 40px; }
-        .stat-card { background: #fff; padding: 25px; border-radius: 16px; box-shadow: var(--shadow-sm); display: flex; align-items: center; justify-content: space-between; }
-        .stat-info h3 { color: var(--text-gray); font-size: 1rem; margin-bottom: 5px; }
-        .stat-info p { font-size: 2rem; font-weight: 800; color: var(--primary-navy); }
-        .stat-icon { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
-        .stat-icon.blue { background: #e0e7ff; color: #4f46e5; }
-        .stat-icon.green { background: #dcfce7; color: #16a34a; }
-        .stat-icon.orange { background: #ffedd5; color: #ea580c; }
-        
-        /* Table */
-        .table-card { background: #fff; border-radius: 16px; box-shadow: var(--shadow-sm); padding: 25px; }
-        .table-card h2 { margin-bottom: 20px; font-size: 1.5rem; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 15px; text-align: right; border-bottom: 1px solid var(--border-color); }
-        th { color: var(--text-gray); font-weight: 600; }
-        .status { padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
-        .status.active { background: #dcfce7; color: #16a34a; }
-        .actions { display: flex; gap: 10px; }
-        .action-btn { background: none; border: none; color: var(--text-gray); cursor: pointer; transition: 0.3s; }
-        .action-btn:hover { color: var(--bright-blue); }
-        
-        /* Responsive Admin */
-        @media (max-width: 768px) {
-            body { flex-direction: column; }
-            .sidebar { position: static; width: 100%; height: auto; padding: 0; border-bottom: 1px solid var(--border-color); }
-            .sidebar-logo { display: none; }
-            .nav-menu { display: flex; overflow-x: auto; white-space: nowrap; }
-            .nav-item { margin: 0; }
-            .nav-link { padding: 15px; border-right: none !important; border-bottom: 3px solid transparent; }
-            .nav-link.active { background: transparent; color: var(--bright-blue); border-bottom-color: var(--bright-blue); }
-            .main-content { margin-right: 0; padding: 20px; }
-            .stats-grid { grid-template-columns: 1fr; }
-            table { display: block; overflow-x: auto; }
-            .header { flex-direction: column; align-items: flex-start; gap: 15px; }
-        }
-    </style>
 </head>
 <body>
-    
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="sidebar-logo">
-            <i class="fa-solid fa-shield-heart"></i> اطمن
-        </div>
-        <ul class="nav-menu">
-            <li class="nav-item"><a href="dashboard.html" class="nav-link active"><i class="fa-solid fa-house"></i> لوحة التحكم</a></li>
-            <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-users"></i> المستخدمون</a></li>
-            <li class="nav-item"><a href="add-user.html" class="nav-link"><i class="fa-solid fa-user-plus"></i> إضافة مستخدم</a></li>
-            <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-ring"></i> الأساور</a></li>
-            <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-chart-line"></i> التقارير</a></li>
-            <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-gear"></i> الإعدادات</a></li>
-        </ul>
-    </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <div class="header">
-            <h1>نظرة عامة</h1>
-            <a href="add-user.html" class="add-btn"><i class="fa-solid fa-plus"></i> إضافة مستخدم جديد</a>
-        </div>
-
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-info">
-                    <h3>إجمالي المستخدمين</h3>
-                    <p>128</p>
-                </div>
-                <div class="stat-icon blue"><i class="fa-solid fa-users"></i></div>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-shield-heart"></i>
+                اطمن
             </div>
-            <div class="stat-card">
-                <div class="stat-info">
-                    <h3>الأساور المفعلة</h3>
-                    <p>124</p>
+            <div class="nav-menu">
+                <a href="dashboard.html" class="nav-link active">
+                    <i class="fa-solid fa-house"></i> لوحة التحكم
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa-solid fa-users"></i> المستخدمون
+                </a>
+                <a href="add-user.html" class="nav-link">
+                    <i class="fa-solid fa-user-plus"></i> إضافة مستخدم
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa-solid fa-ring"></i> الأساور
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa-solid fa-box"></i> الطلبات
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa-solid fa-chart-pie"></i> التقارير
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa-solid fa-gear"></i> الإعدادات
+                </a>
+                <div style="margin-top: 50px;">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-right-from-bracket"></i> تسجيل الخروج
+                    </a>
                 </div>
-                <div class="stat-icon green"><i class="fa-solid fa-check"></i></div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-info">
-                    <h3>تحت الانتظار</h3>
-                    <p>3</p>
-                </div>
-                <div class="stat-icon orange"><i class="fa-solid fa-clock"></i></div>
             </div>
         </div>
 
-        <div class="table-card">
-            <h2>آخر المستخدمين</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>الاسم</th>
-                        <th>العمر</th>
-                        <th>رقم الأسورة</th>
-                        <th>تاريخ الإضافة</th>
-                        <th>الحالة</th>
-                        <th>إجراءات</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>علي محمد أحمد</td>
-                        <td>5 سنوات</td>
-                        <td>ATMN-001</td>
-                        <td>2024-05-10</td>
-                        <td><span class="status active">مفعل</span></td>
-                        <td class="actions">
-                            <button class="action-btn"><i class="fa-solid fa-eye"></i></button>
-                            <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
-                            <button class="action-btn" style="color: #dc2626;"><i class="fa-solid fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>سارة أحمد محمود</td>
-                        <td>8 سنوات</td>
-                        <td>ATMN-002</td>
-                        <td>2024-05-10</td>
-                        <td><span class="status active">مفعل</span></td>
-                        <td class="actions">
-                            <button class="action-btn"><i class="fa-solid fa-eye"></i></button>
-                            <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
-                            <button class="action-btn" style="color: #dc2626;"><i class="fa-solid fa-trash"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Main Content -->
+        <div class="main-content">
+            
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-icon" style="background: #e8f0fe; color: #0056b3;">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="stat-info" style="text-align: left;">
+                        <p>إجمالي المستخدمين</p>
+                        <h2>128</h2>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon" style="background: #e6f4ea; color: #137333;">
+                        <i class="fa-solid fa-ring"></i>
+                    </div>
+                    <div class="stat-info" style="text-align: left;">
+                        <p>الأساور المفعلة</p>
+                        <h2>124</h2>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon" style="background: #fef0db; color: #e37400;">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+                    <div class="stat-info" style="text-align: left;">
+                        <p>إجمالي الطلبات</p>
+                        <h2>45</h2>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon" style="background: #fce8e6; color: #c5221f;">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="stat-info" style="text-align: left;">
+                        <p>تحت الانتظار</p>
+                        <h2>3</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="data-table">
+                <div class="table-header">
+                    <h3>آخر المستخدمين</h3>
+                    <a href="add-user.html" class="btn btn-primary" style="padding: 5px 15px; font-size: 13px;"><i class="fa-solid fa-plus"></i> إضافة مستخدم</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الاسم</th>
+                            <th>العمر</th>
+                            <th>رقم الأسورة</th>
+                            <th>تاريخ الإضافة</th>
+                            <th>الحالة</th>
+                            <th>إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>علي محمد أحمد</td>
+                            <td>5 سنوات</td>
+                            <td>ATMN-001</td>
+                            <td>2024-05-10</td>
+                            <td><span class="badge-green">مفعل</span></td>
+                            <td>
+                                <div class="action-icons">
+                                    <i class="fa-solid fa-pen" style="color: #0056b3;"></i>
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>سارة أحمد محمود</td>
+                            <td>8 سنوات</td>
+                            <td>ATMN-002</td>
+                            <td>2024-05-10</td>
+                            <td><span class="badge-green">مفعل</span></td>
+                            <td>
+                                <div class="action-icons">
+                                    <i class="fa-solid fa-pen" style="color: #0056b3;"></i>
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>محمد خالد علي</td>
+                            <td>65 سنة</td>
+                            <td>ATMN-003</td>
+                            <td>2024-05-09</td>
+                            <td><span class="badge-green">مفعل</span></td>
+                            <td>
+                                <div class="action-icons">
+                                    <i class="fa-solid fa-pen" style="color: #0056b3;"></i>
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>أحمد سعيد حسن</td>
+                            <td>32 سنة</td>
+                            <td>ATMN-004</td>
+                            <td>2024-05-09</td>
+                            <td><span class="badge-green">مفعل</span></td>
+                            <td>
+                                <div class="action-icons">
+                                    <i class="fa-solid fa-pen" style="color: #0056b3;"></i>
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </div>
 

@@ -3,109 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الملف الطبي | اطمن</title>
+    <title>الصفحة 4 : صفحة البيانات (عند مسح QR)</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { background-color: #f8fafc; }
-        .profile-container { max-width: 600px; margin: 40px auto; padding: 0 20px; }
-        .profile-card { background: #fff; border-radius: 24px; box-shadow: var(--shadow-md); padding: 30px; text-align: center; margin-bottom: 20px; }
-        .profile-pic { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid var(--light-blue); margin: 0 auto 15px; }
-        .profile-name { font-size: 1.8rem; color: var(--primary-navy); margin-bottom: 5px; }
-        .profile-age { color: var(--text-gray); font-size: 1.1rem; }
-        
-        .alert-box { background-color: #fef2f2; border: 1px solid #fecaca; border-radius: 16px; padding: 20px; margin-bottom: 20px; text-align: right; }
-        .alert-title { color: #dc2626; font-weight: 800; font-size: 1.2rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        .alert-list { list-style: none; color: #991b1b; padding-right: 10px; }
-        .alert-list li { margin-bottom: 5px; position: relative; }
-        .alert-list li::before { content: "•"; position: absolute; right: -15px; color: #dc2626; }
-        
-        .info-section { background: #fff; border-radius: 24px; box-shadow: var(--shadow-sm); padding: 25px; margin-bottom: 20px; text-align: right; }
-        .section-heading { color: var(--primary-navy); font-size: 1.3rem; margin-bottom: 15px; border-bottom: 2px solid var(--light-blue); padding-bottom: 10px; }
-        
-        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .info-item .label { display: block; color: var(--text-gray); font-size: 0.9rem; margin-bottom: 5px; }
-        .info-item .value { font-weight: 700; color: var(--text-dark); }
-        
-        .contact-list { display: flex; flex-direction: column; gap: 15px; }
-        .contact-item { display: flex; justify-content: space-between; align-items: center; padding: 15px; background: #f8fafc; border-radius: 12px; border: 1px solid var(--border-color); }
-        .contact-info strong { display: block; color: var(--primary-navy); }
-        .contact-info span { color: var(--text-gray); font-size: 0.9rem; }
-        .call-btn { background: #22c55e; color: #fff; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; transition: var(--transition); }
-        .call-btn:hover { background: #16a34a; transform: scale(1.05); }
-    </style>
 </head>
-<body>
-    <div class="profile-container">
-        <!-- Header -->
-        <div style="text-align: center; margin-bottom: 30px;">
-            <a href="index.html" class="logo" style="justify-content: center; font-size: 32px;">
-                <i class="fa-solid fa-shield-heart"></i> اطمن
-            </a>
-        </div>
+<body class="profile-page">
 
-        <!-- Personal Info -->
-        <div class="profile-card">
-            <img src="https://via.placeholder.com/150" alt="صورة المريض" class="profile-pic">
-            <h1 class="profile-name">علي محمد أحمد</h1>
-            <p class="profile-age">5 سنوات</p>
-        </div>
-
-        <!-- Critical Medical Condition -->
-        <div class="alert-box">
-            <div class="alert-title">
-                <i class="fa-solid fa-triangle-exclamation"></i> حالة طبية مهمة
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="logo" style="font-size: 20px;">
+                <i class="fa-solid fa-shield-heart"></i>
+                اطمن
             </div>
+            <select class="lang-select">
+                <option>عربي</option>
+                <option>English</option>
+            </select>
+        </div>
+
+        <div class="profile-info">
+            <img src="assets/images/child.png" alt="المريض" class="profile-img">
+            <h2>علي محمد أحمد</h2>
+            <p>5 سنوات</p>
+        </div>
+
+        <div class="alert-danger">
+            <div class="alert-title"><i class="fa-solid fa-triangle-exclamation"></i> حالة طبية مهمة</div>
             <ul class="alert-list">
                 <li>حساسية من البنسلين</li>
                 <li>مرض السكري (النوع الأول)</li>
             </ul>
         </div>
 
-        <!-- Additional Info & Medications -->
-        <div class="info-section">
-            <h2 class="section-heading">معلومات إضافية</h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <span class="label">فصيلة الدم</span>
-                    <span class="value">A+</span>
+        <div class="info-flex">
+            <div class="info-col">
+                <div class="info-title">معلومات إضافية</div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span style="color: var(--text-gray);">فصيلة الدم</span>
+                    <strong style="color: var(--blue);">A+</strong>
                 </div>
-                <div class="info-item">
-                    <span class="label">الوزن</span>
-                    <span class="value">20 كجم</span>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span style="color: var(--text-gray);">الوزن</span>
+                    <strong style="color: var(--blue);">20 كجم</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-gray);">الحالة العامة</span>
+                    <strong style="color: var(--blue);">جيدة</strong>
                 </div>
             </div>
-            
-            <h2 class="section-heading" style="margin-top: 25px;">الأدوية</h2>
-            <ul class="alert-list" style="color: var(--text-dark);">
-                <li style="color: var(--text-dark);"><strong class="text-primary">Insulin</strong> - مرتين يومياً</li>
-            </ul>
+
+            <div class="info-col">
+                <div class="info-title">الأدوية</div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px; align-items: center;">
+                    <div style="display: flex; align-items: center; gap: 5px; color: var(--blue);">
+                        <i class="fa-solid fa-pills"></i> Insulin
+                    </div>
+                    <i class="fa-solid fa-circle-check" style="color: #34a853;"></i>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px; align-items: center;">
+                    <div style="display: flex; align-items: center; gap: 5px; color: var(--blue);">
+                        <i class="fa-solid fa-pills"></i> Panadol
+                    </div>
+                    <span></span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="display: flex; align-items: center; gap: 5px; color: var(--blue);">
+                        <i class="fa-solid fa-pills"></i> Vitamin D
+                    </div>
+                    <i class="fa-solid fa-circle-check" style="color: #34a853;"></i>
+                </div>
+            </div>
         </div>
 
-        <!-- Emergency Contacts -->
-        <div class="info-section">
-            <h2 class="section-heading">أرقام الطوارئ</h2>
-            <div class="contact-list">
-                <div class="contact-item">
-                    <div class="contact-info">
-                        <strong>محمد أحمد (الأب)</strong>
-                        <span>0100 123 4567</span>
+        <div class="info-box" style="margin-top: 20px;">
+            <div class="info-title">أرقام الطوارئ</div>
+            <div class="emergency-list">
+                <div class="emergency-item">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <img src="https://placehold.co/40x40/f0f0f0/999?text=Dad" alt="الأب" style="border-radius: 50%;">
+                        <div class="emer-text">
+                            <strong>محمد أحمد الأب</strong>
+                        </div>
                     </div>
-                    <a href="tel:01001234567" class="call-btn"><i class="fa-solid fa-phone"></i></a>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <span style="color: var(--blue); font-weight: 600; font-size: 13px;">0100 123 4567</span>
+                        <a href="tel:01001234567" class="emer-btn"><i class="fa-solid fa-phone"></i></a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <div class="contact-info">
-                        <strong>أسماء محمد (الأم)</strong>
-                        <span>0100 987 6543</span>
+                <div class="emergency-item">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <img src="https://placehold.co/40x40/f0f0f0/999?text=Mom" alt="الأم" style="border-radius: 50%;">
+                        <div class="emer-text">
+                            <strong>أسماء محمد الأم</strong>
+                        </div>
                     </div>
-                    <a href="tel:01009876543" class="call-btn"><i class="fa-solid fa-phone"></i></a>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <span style="color: var(--blue); font-weight: 600; font-size: 13px;">0100 987 6543</span>
+                        <a href="tel:01009876543" class="emer-btn"><i class="fa-solid fa-phone"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <div style="text-align: center; margin-top: 30px; color: var(--text-gray); font-size: 0.9rem;">
-            <p><i class="fa-solid fa-check-circle" style="color: var(--bright-blue);"></i> تم التحقق من هذه الصفحة بواسطة اطمن</p>
+
+        <button class="btn btn-primary" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">إرسال موقعي <i class="fa-solid fa-location-dot"></i></button>
+
+        <div style="text-align: center; font-size: 11px; color: var(--text-gray);">
+            <i class="fa-solid fa-shield-heart" style="color: var(--blue);"></i> تم إنشاء هذه الصفحة بواسطة اطمن
         </div>
+
     </div>
+
 </body>
 </html>
