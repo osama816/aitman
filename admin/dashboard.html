@@ -46,6 +46,21 @@
         .actions { display: flex; gap: 10px; }
         .action-btn { background: none; border: none; color: var(--text-gray); cursor: pointer; transition: 0.3s; }
         .action-btn:hover { color: var(--bright-blue); }
+        
+        /* Responsive Admin */
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .sidebar { position: static; width: 100%; height: auto; padding: 0; border-bottom: 1px solid var(--border-color); }
+            .sidebar-logo { display: none; }
+            .nav-menu { display: flex; overflow-x: auto; white-space: nowrap; }
+            .nav-item { margin: 0; }
+            .nav-link { padding: 15px; border-right: none !important; border-bottom: 3px solid transparent; }
+            .nav-link.active { background: transparent; color: var(--bright-blue); border-bottom-color: var(--bright-blue); }
+            .main-content { margin-right: 0; padding: 20px; }
+            .stats-grid { grid-template-columns: 1fr; }
+            table { display: block; overflow-x: auto; }
+            .header { flex-direction: column; align-items: flex-start; gap: 15px; }
+        }
     </style>
 </head>
 <body>
